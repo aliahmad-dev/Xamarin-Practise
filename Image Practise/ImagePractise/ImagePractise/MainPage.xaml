@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:ImagePractise" x:Class="ImagePractise.MainPage">
+    <RelativeLayout>
+            <StackLayout
+                Padding="20,0,20,0"
+                Orientation="Horizontal"
+                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                      Factor=1,
+                                                                      Property=Width}"
+                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                  Factor=0.10,
+                                                                  Property=Width}">
+                <Button
+                    Clicked="Previous_Clicked"
+                    FontSize="Medium"
+                    Text="&#xf053"
+                    TextColor="White">
+                <Button.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String" Android="fa-regular-400.ttf#Font Awesome 5 Free Regular" iOS="Font Awesome 5 Free"/>
+                </Button.FontFamily>
+                </Button>
+                <ActivityIndicator
+                    HorizontalOptions="CenterAndExpand"
+                    IsRunning="{Binding Source={x:Reference imageView}, Path=IsLoading}"
+                    Color="Black" />
+                <Button
+                    BackgroundColor="Black"
+                    Clicked="Next_Clicked"
+                    FontSize="Medium"
+                    Text="Next"
+                    TextColor="White" />
+            </StackLayout>
+            <Image
+                x:Name="imageView"
+                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                      Factor=1,
+                                                                      Property=Width}"
+                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                  Factor=0.5,
+                                                                  Property=Width}" />
+        </RelativeLayout>
+</ContentPage>
