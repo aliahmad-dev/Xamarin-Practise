@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AbsoluteLayout2" x:Class="AbsoluteLayout2.MainPage">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" iOS="0,30,0,0" />
+    </ContentPage.Padding>
+    <AbsoluteLayout>
+            <Image
+                AbsoluteLayout.LayoutBounds="0,0,1,1"
+                AbsoluteLayout.LayoutFlags="All"
+                Aspect="AspectFill"
+                Source="http://lorempixel.com/1920/1080/nature/7" />
+            <BoxView
+                AbsoluteLayout.LayoutBounds="0,1,1,100"
+                AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
+                Opacity="0.5"
+                Color="Black" />
+            <StackLayout
+                Padding="30,0"
+                AbsoluteLayout.LayoutBounds="0,1,1,100"
+                AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
+                Orientation="Horizontal"
+                VerticalOptions="Center">
+                <Label
+                    FontSize="25"
+                    HorizontalOptions="Center"
+                    Text="Profile"
+                    TextColor="White" />
+                <Label
+                    FontSize="25"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="Mediate"
+                    TextColor="White" />
+                <Label
+                    FontSize="25"
+                    HorizontalOptions="Center"
+                    Text="Themes"
+                    TextColor="White" />
+            </StackLayout>
+            <Label Text="Relax" TextColor="White" FontSize="30" AbsoluteLayout.LayoutBounds="0,20,1,60" AbsoluteLayout.LayoutFlags="WidthProportional" HorizontalOptions="Center"/>
+        </AbsoluteLayout>
+</ContentPage>
